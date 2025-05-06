@@ -9,7 +9,7 @@ A desktop application built with Python and Tkinter that helps you manage and mo
 
 - 👀 View all your open Pull Requests in one place
 - 🔄 Snapshot review status tracking
-- 🔍 Filter between your PRs and PRs in other repositories
+- 🔍 Filter between your PRs under your username and your PRs in other repositories
 - 🔄 Cache system for improved performance
 - 🎯 Double-click to open PRs in your default browser
 - ⚡ Sort PRs by title, state, or repository
