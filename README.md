@@ -16,18 +16,17 @@ A desktop application built with Python and Tkinter that helps you manage and mo
 
 - Python 3.10 or higher
 - Required Python packages:
-  - pyperclip
   - requests
 
 ## Installation
 
 1. Clone this repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/svandragt/github-open-pullrequest-viewer
 ```
 2. Install the required dependencies:
 ```bash
-pip install pyperclip requests
+pip install requests
 ```
 ## Configuration
 
@@ -68,7 +67,7 @@ python github-viewer.py
 - UNKNOWN (in case of API errors)
 
 ### Caching
-- PR data is cached for 30 minutes
+- PR data is cached for 30 minutes, or until you press Refresh.
 - Review states are cached separately
 - Cache is automatically saved on exit and loaded on startup
 
@@ -82,7 +81,7 @@ export GITHUB_TOKEN=your_token_here
 
 ## Notes
 
-- The application requires a GitHub token with 'repo' scope for accessing private repositories
-- Cache files (`review_cache.json` and `pr_cache.json`) are created in the application directory
-- Configuration is stored in `config.json`
+- The application requires a GitHub token with 'repo' scope for accessing private repositories.
+- Cache files (`review_cache.json` and `pr_cache.json`) are created in the application directory.
+- Configuration is stored in `config.json`.
 
