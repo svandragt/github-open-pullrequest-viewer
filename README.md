@@ -1,6 +1,3 @@
-I'll help you create a README.md for this GitHub Pull Request Viewer application. I'll include all the key features and setup instructions based on the code.
-
-
 # GitHub Pull Request Viewer
 
 A desktop application built with Python and Tkinter that helps you manage and monitor your GitHub Pull Requests efficiently.
