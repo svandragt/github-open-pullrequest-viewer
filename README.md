@@ -5,7 +5,7 @@ A desktop application built with Python and Tkinter that helps you manage and mo
 ## Features
 
 - 👀 View all your open Pull Requests in one place
-- 🔄 Real-time review status tracking
+- 🔄 Snapshot review status tracking
 - 🔍 Filter between your PRs and PRs in other repositories
 - 🔄 Cache system for improved performance
 - 🎯 Double-click to open PRs in your default browser
