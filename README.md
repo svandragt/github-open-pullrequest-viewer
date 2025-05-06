@@ -2,6 +2,9 @@
 
 A desktop application built with Python and Tkinter that helps you manage and monitor your GitHub Pull Requests efficiently.
 
+![Screenshot_011](https://github.com/user-attachments/assets/7ff306c8-2d47-4ce3-89d7-296fcc7caf3e)
+
+
 ## Features
 
 - 👀 View all your open Pull Requests in one place
