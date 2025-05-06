@@ -352,12 +352,12 @@ button_frame.grid(row=0, column=0, sticky='ew', padx=10, pady=(10,0))
 refresh_button = ttk.Button(button_frame, text="Refresh PRs", command=refresh_prs)
 refresh_button.pack(side='left', padx=(0,5))
 
-settings_button = ttk.Button(button_frame, text="Settings", command=open_settings_window)
-settings_button.pack(side='left', padx=(0, 5))
-
 filter_button = ttk.Button(button_frame, text="Show Mine PRs" if g_show_others_only else "Show Others PRs",
                            command=lambda: toggle_filter())
 filter_button.pack(side='left')
+
+settings_button = ttk.Button(button_frame, text="Settings", command=open_settings_window)
+settings_button.pack(side='right', padx=(0, 5))
 
 tree_frame = ttk.Frame(root)
 tree_frame.grid(row=1, column=0, sticky='nsew', padx=10, pady=10)
