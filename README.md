@@ -64,6 +64,7 @@ python github-viewer.py
 
 ### Review States
 - APPROVED
+- ALL_APPROVED
 - CHANGES_REQUESTED
 - REVIEW_REQUIRED
 - REVIEW_IN_PROGRESS

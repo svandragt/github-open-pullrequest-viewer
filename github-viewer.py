@@ -166,6 +166,8 @@ def get_pr_review_state(pull_request_url, headers):
         elif any(state == "CHANGES_REQUESTED" for state in latest_reviews.values()):
             state = "CHANGES_REQUESTED"
         elif all(state == "APPROVED" for state in latest_reviews.values()):
+            state = "ALL_APPROVED"
+        elif any(state == "APPROVED" for state in latest_reviews.values()):
             state = "APPROVED"
         else:
             state = "REVIEW_IN_PROGRESS"
