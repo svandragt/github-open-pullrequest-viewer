@@ -70,7 +70,7 @@ python github-viewer.py
 - UNKNOWN (in case of API errors)
 
 ### Caching
-- PR data is cached for 30 minutes, or until you press Refresh.
+- PR data is cached for 15 minutes, or until you press Refresh.
 - Review states are cached separately
 - Cache is automatically saved on exit and loaded on startup
 

@@ -17,7 +17,7 @@ from tkinter import ttk, messagebox
 import webbrowser
 
 # Cache settings
-CACHE_DURATION = 1800  # 30 minutes in seconds
+CACHE_DURATION = 900  # 15 minutes in seconds
 REVIEW_CACHE_FILE = 'review_cache.json'
 PR_CACHE_FILE = 'pr_cache.json'
 pr_cache: Dict[str, Any] = {}
@@ -288,6 +288,17 @@ def toggle_filter():
     load_prs()
 
 
+# Global variable for auto-refresh
+auto_refresh_job = None
+
+
+def schedule_next_refresh():
+    global auto_refresh_job
+    if auto_refresh_job is not None:
+        root.after_cancel(auto_refresh_job)
+    auto_refresh_job = root.after(30000, load_prs)  # 30 seconds (not busting the cache)
+
+
 def load_prs():
     for row in tree.get_children():
         tree.delete(row)
@@ -308,6 +319,9 @@ def load_prs():
         repo_name = pr['repository_url'].split('/')[-1]
         review_state = review_states.get(pr['url'], 'UNKNOWN')
         tree.insert("", "end", values=(pr['title'], review_state, repo_name, pr['html_url']))
+
+    # Schedule next refresh
+    schedule_next_refresh()
 
 
 # --- Main Application Setup ---
@@ -370,6 +384,16 @@ load_pr_cache()
 load_prs()
 
 print("Starting the Tkinter event loop...")
+
+
+def on_closing():
+    global auto_refresh_job
+    if auto_refresh_job is not None:
+        root.after_cancel(auto_refresh_job)
+    root.destroy()
+
+
+root.protocol("WM_DELETE_WINDOW", on_closing)
 root.mainloop()
 
 # Save cache on exit
