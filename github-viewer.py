@@ -374,7 +374,6 @@ for col, text in headings.items():
 col_widths = {"Title": 350, "State": 80, "Repo": 150, "URL": 250}
 for col, width in col_widths.items():
     tree.column(col, anchor="w", width=width, stretch=tk.YES)
-tree.column("State", anchor="center")
 
 scrollbar = ttk.Scrollbar(tree_frame, orient="vertical", command=tree.yview)
 tree.configure(yscroll=scrollbar.set)
