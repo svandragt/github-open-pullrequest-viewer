@@ -299,6 +299,17 @@ def schedule_next_refresh():
     auto_refresh_job = root.after(30000, load_prs)  # 30 seconds (not busting the cache)
 
 
+def clear_caches():
+    global pr_cache, review_cache
+    pr_cache = {}
+    review_cache = {}
+
+
+def refresh_prs():
+    clear_caches()
+    load_prs()
+
+
 def load_prs():
     for row in tree.get_children():
         tree.delete(row)
@@ -338,7 +349,7 @@ root.rowconfigure(1, weight=1)
 button_frame = ttk.Frame(root)
 button_frame.grid(row=0, column=0, sticky='ew', padx=10, pady=(10,0))
 
-refresh_button = ttk.Button(button_frame, text="Refresh PRs", command=load_prs)
+refresh_button = ttk.Button(button_frame, text="Refresh PRs", command=refresh_prs)
 refresh_button.pack(side='left', padx=(0,5))
 
 settings_button = ttk.Button(button_frame, text="Settings", command=open_settings_window)
